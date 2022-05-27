@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category  Y1
+ * @package   Y1_GoogleAddressValidation
+ * @copyright Copyright (c) Y1 Digital AG (http://www.y1.de)
+ * @contact   ronak.chauhan@y1.de
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Y1_GoogleAddressValidation">
+    </module>
+</config>

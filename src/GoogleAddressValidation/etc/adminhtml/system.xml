@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category  Y1
+ * @package   Y1_GoogleAddressValidation
+ * @copyright Copyright (c) Y1 Digital AG (https://y1.de)
+ * @contact   ronak.chauhan@y1.de
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="google_address_validation" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Google Address Validation</label>
+            <tab>service</tab>
+            <resource>Y1_GoogleAddressValidation::index</resource>
+            <group id="settings" translate="label,comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Settings</label>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                    <config_path>y1/google_address_validation/enabled</config_path>
+                </field>
+                <field id="api_key" translate="label,comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1">
+                    <label>API Key</label>
+                    <comment>Google Maps API key: https://developers.google.com/places/web-service/get-api-key</comment>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                    <validate>required-entry</validate>
+                    <config_path>y1/google_address_validation/api_key</config_path>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

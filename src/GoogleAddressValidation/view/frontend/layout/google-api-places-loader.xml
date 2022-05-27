@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category  Y1
+ * @package   Y1_GoogleAddressValidation
+ * @copyright Copyright (c) Y1 Digital AG (https://y1.de)
+ * @contact   ronak.chauhan@y1.de
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template" name="google-api-places-loader" template="Y1_GoogleAddressValidation::loader.phtml" ifconfig="y1/google_address_validation/enabled">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Y1\GoogleAddressValidation\ViewModel\Autocomplete</argument>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="requestConfiguration" xsi:type="array">
+                            <item name="types" xsi:type="array">
+                                <item name="0" xsi:type="string">address</item>
+                            </item>
+                            <item name="componentRestrictions" xsi:type="array">
+                                <item name="country" xsi:type="helper" helper="Y1\GoogleAddressValidation\ViewModel\Autocomplete::getAllowedCountries"/>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
